@@ -3,19 +3,22 @@
 
 using namespace std;
 
-int countCharacter(string str) {
+int countVowel(string str) {
     int count = 0;
-    for (char c : str) {
-        count++;
+    for (char ch : str) {
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
+            ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') {
+            count++;
+        }
     }
     return count;
 }
 
 int main() {
-    string inputString;
-    cout << "Enter a string: ";
-    getline(cin, inputString);
-
-    int numOfChars = countCharacter(inputString);
-    cout << "Character count: " << numOfChars << endl;
+    string input;
+    cout << "Enter a string or Q to quit: ";
+    getline(cin, input);
+    
+    int vowelCount = countVowel(input);
+    cout << "Vowel count: " << vowelCount << endl;
 }
